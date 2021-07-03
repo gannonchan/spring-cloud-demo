@@ -1,0 +1,26 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-user-provider
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@139.155.245.150:11521:orcl
+    username: scott
+    password: scott
+    type: com.alibaba.druid.pool.DruidDataSource
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7002/eureka
+mybatis:
+  mapper-locations: /mapper/*.xml
+  type-aliases-package: com.gannon.cloud.dao
+logging:
+  level:
+    com:
+      gannon:
+        cloud:
+          dao: debug

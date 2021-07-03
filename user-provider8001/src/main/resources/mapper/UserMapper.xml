@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gannon.cloud.dao.UserDao">
+    <resultMap id="userMap" type="com.gannon.cloud.entity.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+    </resultMap>
+    <select id="listUser" resultType="com.gannon.cloud.entity.User">
+        select * from users
+    </select>
+    <select id="findUserById" resultMap="userMap">
+        select * from users where id=#{id}
+    </select>
+    <insert id="insertUser" parameterType="com.gannon.cloud.entity.User">
+        insert into users (id,name,age,gender) values (#{id},#{name},#{age},#{gender})
+    </insert>
+    <update id="updateUserById" parameterType="com.gannon.cloud.entity.User">
+        update users set name=#{name}, age=#{age}, gender=#{gender} where id=#{id}
+    </update>
+    <delete id="deleteUserById">
+        delete from users where id=#{id}
+    </delete>
+</mapper>
