@@ -9,12 +9,17 @@ spring:
     username: scott
     password: scott
     type: com.alibaba.druid.pool.DruidDataSource
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:7001/eureka
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.111:8888
+#集成Eureka注册中心
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka
 mybatis:
   mapper-locations: /mapper/*.xml
   type-aliases-package: com.gannon.cloud.dao

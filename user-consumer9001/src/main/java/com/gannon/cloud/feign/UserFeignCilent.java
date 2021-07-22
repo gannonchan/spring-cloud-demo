@@ -1,4 +1,4 @@
-package com.gannon.cloud;
+package com.gannon.cloud.feign;
 
 import com.gannon.cloud.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;

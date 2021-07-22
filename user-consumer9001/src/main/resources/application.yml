@@ -3,9 +3,20 @@ server:
 spring:
   application:
     name: cloud-user-consumer
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+#    注册进nacos注册中心配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.111:8888
+#        集成eureka注册中心配置
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+#springboot默认日志级别为info这里手动修改feign包下的类使用debug级别
+logging:
+  level:
+    com.gannon.cloud.feign: debug
+feign:

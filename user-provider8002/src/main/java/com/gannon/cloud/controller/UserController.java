@@ -3,6 +3,7 @@ package com.gannon.cloud.controller;
 import com.gannon.cloud.dao.UserDao;
 import com.gannon.cloud.entity.User;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/provider")
+@RefreshScope
 public class UserController {
 
     @Value("${server.port}")

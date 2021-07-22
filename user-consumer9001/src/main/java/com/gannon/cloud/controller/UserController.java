@@ -3,6 +3,7 @@ package com.gannon.cloud.controller;
 import com.gannon.cloud.entity.User;
 import com.gannon.cloud.service.UserService;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/consumer")
+@RefreshScope
 public class UserController {
 
     @Resource

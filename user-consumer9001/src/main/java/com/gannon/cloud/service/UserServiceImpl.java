@@ -1,6 +1,6 @@
 package com.gannon.cloud.service;
 
-import com.gannon.cloud.UserFeignCilent;
+import com.gannon.cloud.feign.UserFeignCilent;
 import com.gannon.cloud.entity.User;
 import org.springframework.stereotype.Service;
 
