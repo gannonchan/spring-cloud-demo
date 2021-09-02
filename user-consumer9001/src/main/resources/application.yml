@@ -7,7 +7,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.1.111:8888
+        server-addr: localhost:8888
 #        集成eureka注册中心配置
 #eureka:
 #  client:

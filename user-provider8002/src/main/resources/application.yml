@@ -10,9 +10,12 @@ spring:
     password: scott
     type: com.alibaba.druid.pool.DruidDataSource
   cloud:
+    #集成nacos注册中心
     nacos:
       discovery:
-        server-addr: 192.168.1.111:8888
+        server-addr: 192.168.2.11:8888
+        username: nacos
+        password: nacos
 #集成Eureka注册中心
 #eureka:
 #  client:
