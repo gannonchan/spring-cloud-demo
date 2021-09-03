@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.11:8888
+        username: nacos
+        password: nacos
+#eureka:
+#  client:
+#    instance:
+#      hostname: cloud-gateway-service
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka

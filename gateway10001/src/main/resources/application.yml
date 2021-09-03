@@ -1,5 +1,5 @@
 server:
-  port: 10000
+  port: 10001
 spring:
   application:
     name: cloud-gateway
@@ -16,10 +16,10 @@ spring:
 #          enable: true
       routes:
         - id: cloud-user-consumerth1
-#          http://localhost:9001/consumer/users/id/2
+          #          http://localhost:9001/consumer/users/id/2
           uri: lb://cloud-user-consumer
           predicates:
-#            http://localhost:10000/users/id/2
+            #            http://localhost:10000/users/id/2
             - Path=/users/id/**
           filters:
             - PrefixPath=/consumer

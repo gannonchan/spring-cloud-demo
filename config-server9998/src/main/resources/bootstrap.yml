@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          #          如果出现auth fail错误,则使用https协议URI并配置上用户名密码
+          #          uri: https://github.com/gannonchan/springcloud-config-server.git
+          uri: https://gitee.com/gannon/springcloud-config-center.git
+          search-path: springcloud-config-center
+          #          使用github可能会因为网络问题会出现cannot open git-upload-pack和超时异常
+          username: bim@outlook.com
+          password: chen1230
+      label: develop

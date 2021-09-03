@@ -1,21 +1,19 @@
 server:
   port: 8002
 spring:
-  application:
-    name: cloud-user-provider
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@139.155.245.150:11521:orcl
-    username: scott
-    password: scott
+    url: jdbc:oracle:thin:@${gannon.database.server.host}:${gannon.database.server.port}:${gannon.database.server.sid}
+    username: ${gannon.database.server.username}
+    password: ${gannon.database.server.password}
     type: com.alibaba.druid.pool.DruidDataSource
   cloud:
     #集成nacos注册中心
     nacos:
       discovery:
-        server-addr: 192.168.2.11:8888
-        username: nacos
-        password: nacos
+        server-addr: ${gannon.spring.cloud.nacos.server-addr}
+        username: ${gannon.spring.cloud.nacos.username}
+        password: ${gannon.spring.cloud.nacos.password}
 #集成Eureka注册中心
 #eureka:
 #  client:

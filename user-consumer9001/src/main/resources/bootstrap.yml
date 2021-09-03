@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: cloud-user-consumer
+  cloud:
+    config:
+      label: develop
+      uri: http://localhost:9999
+      name: config
+      profile: dev
