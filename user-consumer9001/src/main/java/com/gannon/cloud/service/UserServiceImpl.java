@@ -2,6 +2,7 @@ package com.gannon.cloud.service;
 
 import com.gannon.cloud.feign.UserFeignCilent;
 import com.gannon.cloud.entity.User;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -28,6 +29,12 @@ public class UserServiceImpl implements UserService {
     public List<User> listUser() {
         List<User> list = userFeignCilent.listUser();
         return list;
+    }
+
+    @Override
+    public Page<User> listUserPageAndSortWithDesc(Integer pageNum, Integer pageSize) {
+        Page<User> userPage = userFeignCilent.listUserPageAndSortWithDesc(pageNum, pageSize);
+        return userPage;
     }
 
     @Override

@@ -23,12 +23,20 @@ spring:
             - Path=/users/id/**
           filters:
             - PrefixPath=/consumer
-        - id: cloud-user-consumerth1
+        - id: cloud-user-consumerth2
           #          http://localhost:9001/consumer/users
           uri: lb://cloud-user-consumer
           predicates:
             #            http://localhost:10000/users/id/2
             - Path=/users
+          filters:
+            - PrefixPath=/consumer
+        - id: cloud-user-consumerth3
+            #          http://localhost:9001/consumer/users
+          uri: lb://cloud-user-consumer
+          predicates:
+              #            http://localhost:10000/users/id/2
+            - Path=/users/**
           filters:
             - PrefixPath=/consumer
 #eureka:

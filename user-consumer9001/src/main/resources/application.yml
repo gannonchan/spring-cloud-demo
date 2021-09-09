@@ -18,5 +18,5 @@ spring:
 #springboot默认日志级别为info这里手动修改feign包下的类使用debug级别
 logging:
   level:
-    com.gannon.cloud.feign: debug
+    com.gannon.cloud: debug
 feign:

@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8003
 spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
@@ -7,24 +7,19 @@ spring:
     username: ${gannon.database.server.username}
     password: ${gannon.database.server.password}
     type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      max-active: 100
+  jpg:
+    show-sql: true
 #集成Eureka注册中心
 #eureka:
 #  client:
 #    fetch-registry: true
 #    register-with-eureka: true
 #    service-url:
-#      defaultZone: http://localhost:7001/eureka
-mybatis:
-  mapper-locations: /mapper/*.xml
-  type-aliases-package: com.gannon.cloud.dao
+#      defaultZone: http://localhost:7002/eureka
 logging:
   level:
     com:
       gannon:
-        cloud:
-          dao: debug
-management:
-  endpoint:
-    web:
-      exposure:
-        include: "*"
+        cloud: debug

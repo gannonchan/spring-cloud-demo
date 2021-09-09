@@ -8,8 +8,12 @@ import java.util.List;
 @Mapper
 public interface UserDao {
     User findUserById(String id);
+
     List<User> listUser();
+
     Integer insertUser(User user);
+
     Integer deleteUserById(String id);
+
     Integer updateUserById(User user);
 }

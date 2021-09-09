@@ -17,45 +17,37 @@ public class UserController {
 
     @Value("${server.port}")
     private String port;
-
-    @Value("${nacos.config}")
-    private String config;
-
     @Resource
     private IUserService userService;
-
     @GetMapping("/users/id/{id}")
-    public User findUserById(@PathVariable("id") String id) {
+    public User findUserById(@PathVariable("id") String id){
         User user = userService.findUserById(id);
         return user;
     }
-
     @GetMapping("/users")
-    public List<User> listUser() {
+    public List<User> listUser(){
         List<User> list = userService.listUser();
         return list;
     }
 
     @GetMapping("/users/page")
-    public Page<User> listUserPageAndSortWithDesc(@RequestParam("page_num") Integer pageNum, @RequestParam("size") Integer pageSize) {
+    public Page<User> listUserPageAndSortWithDesc(@RequestParam("page_num") Integer pageNum, @RequestParam("size") Integer pageSize){
         Page<User> page = userService.listUserPageAndSortWithDesc(pageNum, pageSize);
         return page;
     }
 
     @PostMapping("/users")
-    public Integer insertUser(@RequestBody User user) {
+    public Integer insertUser(@RequestBody User user){
         Integer count = userService.insertUser(user);
         return count;
     }
-
     @PutMapping("/users")
-    public Integer updateUserById(@RequestBody User user) {
+    public Integer updateUserById(@RequestBody User user){
         Integer count = userService.updateUserById(user);
         return count;
     }
-
     @DeleteMapping("/users/id/{id}")
-    public Integer deleteUserById(@PathVariable("id") String id) {
+    public Integer deleteUserById(@PathVariable("id") String id){
         Integer count = userService.deleteUserById(id);
         return count;
     }

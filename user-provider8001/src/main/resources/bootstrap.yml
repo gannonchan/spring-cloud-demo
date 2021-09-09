@@ -1,9 +1,27 @@
 spring:
   application:
     name: cloud-user-provider
+  profiles:
+    active: dev
   cloud:
-    config:
-      label: develop
-      uri: http://localhost:9999
-      name: config
-      profile: dev
+#    config:
+#      label: develop
+#      uri: http://localhost:9999
+#      name: config
+#      profile: dev
+    #集成nacos注册中心
+    nacos:
+      discovery:
+        server-addr: 192.168.2.11:8888
+#        在nacos的application.properties开启了auth验证必须设置登录用户和密码
+        username: nacos
+        password: nacos
+#        使用nacos配置中心获得属性文件
+#      约定dataID文件名
+#      Data ID = ${spring.cloud.nacos.config.prefix}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+      config:
+        server-addr: 192.168.2.11:8888
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        username: nacos
+        password: nacos

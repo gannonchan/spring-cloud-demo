@@ -10,6 +10,7 @@
         <module>user</module>
         <module>user-provider8001</module>
         <module>user-provider8002</module>
+        <module>user-provider8003</module>
         <module>user-consumer9001</module>
         <module>gateway10000</module>
         <module>gateway10001</module>

@@ -4,6 +4,7 @@ import com.gannon.cloud.entity.User;
 import com.gannon.cloud.service.UserService;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -30,6 +31,13 @@ public class UserController {
         List<User> list = userService.listUser();
         return list;
     }
+
+    @GetMapping("/users/page")
+    public Page<User> listUserPageAndSortWithDesc(@RequestParam("page_num") Integer pageNum, @RequestParam("size") Integer pageSize){
+        Page<User> page = userService.listUserPageAndSortWithDesc(pageNum, pageSize);
+        return page;
+    }
+
     @PostMapping("/users")
     public Integer insertUser(@RequestBody User user){
         Integer count = userService.insertUser(user);
